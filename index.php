@@ -27,7 +27,11 @@ $movie_2 = new Movies ("Il signore degli anelli: le due torri", "Fantascienza", 
 $movie_3 = new Movies ("Il signore degli anelli: il ritorno del re", "Fantascienza", "Si");
 $movie_4 = new Movies ("Spiral", "Horror", "No");
 $movie_5 = new Movies ("Scream V", "Horror", "No");
-
+$movie_6 = new Movies ("Quo vado", "Commedia", "No");
+$movie_7 = new Movies ("Your Name", "Romantico", "No");
+$movie_8 = new Movies ("One Piece: Red", "Azione", "Si");
+$movie_9 = new Movies ("Quella casa nel bosco", "Horror", "Si");
+$movie_10 = new Movies ("Shutter island", "Thriller", "No");
 
 $movies = [
     $movie_1,
