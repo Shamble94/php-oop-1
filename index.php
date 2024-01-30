@@ -39,6 +39,11 @@ $movies = [
     $movie_3,
     $movie_4,
     $movie_5,
+    $movie_6,
+    $movie_7,
+    $movie_8,
+    $movie_9,
+    $movie_10,
     
 ];
 
