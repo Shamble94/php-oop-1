@@ -50,7 +50,7 @@ $movies = [
 echo "Lista Film";
 foreach ($movies as $movie){
     echo
-    "<ul>" ."<li>". "Titolo:". " " .$movie->title ."<br>". "Genere:". " " .$movie->genre ."<br>" ."Hai visto questo film?:". " " .$movie->seen ."<br>" ."</li>" ."</ul>";
+    "<ul>" ."<li>". "Titolo:". " " .$movie->title ."<br>". "Genere:". " " .$movie->genre ."<br>" ."Hai visto questo film?:". " " .$movie->seenMovie($movie->seen) ."<br>" ."</li>" ."</ul>";
     ;
 }
 ?>
