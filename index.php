@@ -19,6 +19,14 @@ class Movies{
         }
 
     }
+    public function getGenresAsString(){
+        $genres = [];
+        foreach($this->genre as $genre){
+            array_push($genres, $genre ->genre);
+        }
+        $genres_string = implode("/", $genres);
+        return  $genres_string;
+    }
 };
 class Genres{
     public $genre;
@@ -66,7 +74,7 @@ echo "Lista Film";
 foreach ($movies as $movie){
     echo
     "<ul>" .
-    "<li>". "Titolo:". " " .$movie->title ."<br>". "Genere:". " " .$movie->genre ."<br>" ."Hai visto questo film?:". " " .$movie->seenMovie($movie->seen) ."<br>" ."</li>" 
+    "<li>". "Titolo:". " " .$movie->title ."<br>". "Genere:". " " .$movie->getGenresAsString() ."<br>" ."Hai visto questo film?:". " " .$movie->seenMovie($movie->seen) ."<br>" ."</li>" 
     ."</ul>";
     ;
 }
