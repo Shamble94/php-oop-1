@@ -6,32 +6,46 @@ class Movies{
     public $year;
     public $seen;
 
-    function __construct($_title, $_genre, $_seen){
+    function __construct($_title, Array  $_genre,  $_seen){
         $this->title = $_title;
         $this->genre = $_genre;
         $this->seen = $_seen;
     }
     public function seenMovie($seen){
         if($seen === "Si"){
-            return  "Visto";
+            return  "Si, gia visto";
         }else{
-            return "Da vedere";
+            return "No, da vedere";
         }
 
     }
+};
+class Genres{
+    public $genre;
+  
+    
+    function __construct($_genre){
+        $this->genre = $_genre;
+       
+    }
 }
+$genre_1 = new Genres ("Fantascienza");
+$genre_2 = new Genres ("Storico" );
+$genre_3 = new Genres ("Azione" );
+$genre_4 = new Genres ("Thriller" );
 
+$movie_1 = new Movies("Il signore degli anelli: la compagnia dell'anello", [$genre_1, $genre_3], "Si" );
+var_dump($movie_1);
 
-$movie_1 = new Movies("Il signore degli anelli: la compagnia dell'anello", "Fantascienza", "Si");
-$movie_2 = new Movies ("Il signore degli anelli: le due torri", "Fantascienza", "Si");
-$movie_3 = new Movies ("Il signore degli anelli: il ritorno del re", "Fantascienza", "Si");
-$movie_4 = new Movies ("Spiral", "Horror", "No");
-$movie_5 = new Movies ("Scream V", "Horror", "No");
-$movie_6 = new Movies ("Quo vado", "Commedia", "No");
-$movie_7 = new Movies ("Your Name", "Romantico", "No");
-$movie_8 = new Movies ("One Piece: Red", "Azione", "Si");
-$movie_9 = new Movies ("Quella casa nel bosco", "Horror", "Si");
-$movie_10 = new Movies ("Shutter island", "Thriller", "No");
+$movie_2 = new Movies ("Il signore degli anelli: le due torri", [$genre_1], "Si");
+$movie_3 = new Movies ("Il signore degli anelli: il ritorno del re", [$genre_1], "Si");
+$movie_4 = new Movies ("Spiral", [$genre_2], "No");
+$movie_5 = new Movies ("Scream V", [$genre_2], "No");
+$movie_6 = new Movies ("Quo vado", [$genre_3], "No");
+$movie_7 = new Movies ("Your Name", [$genre_1], "No");
+$movie_8 = new Movies ("One Piece: Red", [$genre_1], "Si");
+$movie_9 = new Movies ("Quella casa nel bosco", [$genre_2], "Si");
+$movie_10 = new Movies ("Shutter island", [$genre_4], "No"); 
 
 $movies = [
     $movie_1,
@@ -43,14 +57,17 @@ $movies = [
     $movie_7,
     $movie_8,
     $movie_9,
-    $movie_10,
+    $movie_10, 
     
 ];
+
 
 echo "Lista Film";
 foreach ($movies as $movie){
     echo
-    "<ul>" ."<li>". "Titolo:". " " .$movie->title ."<br>". "Genere:". " " .$movie->genre ."<br>" ."Hai visto questo film?:". " " .$movie->seenMovie($movie->seen) ."<br>" ."</li>" ."</ul>";
+    "<ul>" .
+    "<li>". "Titolo:". " " .$movie->title ."<br>". "Genere:". " " .$movie->genre ."<br>" ."Hai visto questo film?:". " " .$movie->seenMovie($movie->seen) ."<br>" ."</li>" 
+    ."</ul>";
     ;
 }
 ?>
